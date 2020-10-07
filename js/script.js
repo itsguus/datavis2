@@ -26,7 +26,7 @@ function scrollFunction() {
 
         if (!document.querySelector("main").classList.contains("drugs")) inPicture("drugs");
     }
-    else if (scrollHeight > 2100) { // SECTION ALCOHOL
+    else if (scrollHeight > 2100 && scrollHeight <= 4400) { // SECTION ALCOHOL
         if (!document.querySelector("main").classList.contains("alcohol")) inPicture("alcohol");
         if (scrollHeight > 2600 && scrollHeight < 2850) document.querySelector(".question").classList.add("active");
         else document.querySelector(".question").classList.remove("active");
@@ -65,7 +65,24 @@ function scrollFunction() {
         if (scrollHeight > 3750) alcBars[9].classList.add("active");
         else alcBars[9].classList.remove("active");
         
+        var jobsCalc = scrollHeight - 4500; 
+        document.querySelector(".large h1").style = "transform: scale(" + (470 - (jobsCalc * (469/1600))) + "); margin-left: -" + (96 - (jobsCalc * (96/1600))) + "rem";
+
+    }
+    else if (scrollHeight > 4500 ) { // SECTION JOBS
+        if (!document.querySelector("main").classList.contains("jobs")) inPicture("jobs");
+        var jobsCalc = scrollHeight - 4500; 
+        if (jobsCalc > 1600) jobsCalc = 1600;
         console.log(scrollHeight);
+        document.querySelector(".large h1").style = "transform: scale(" + (470 - (jobsCalc * (469/1600))) + "); margin-left: -" + (96 - (jobsCalc * (96/1600))) + "rem";
+
+        if (scrollHeight > 6160) document.querySelector("section.bijbaan p").classList.add("active");
+        else document.querySelector("section.bijbaan p").classList.remove("active");
+        if (scrollHeight > 6300) document.querySelector("section.bijbaan p").classList.remove("active");
+        
+        if (scrollHeight > 6400) document.querySelector("section.bijbaan h1").classList.add("active");
+        else document.querySelector("section.bijbaan h1").classList.remove("active");
+
     }
 }
 
@@ -75,6 +92,7 @@ document.querySelector("main").addEventListener("scroll", scrollFunction);
 function inPicture(classVar) {
     document.querySelector("main").classList.remove("intro");
     document.querySelector("main").classList.remove("drugs");
+    document.querySelector("main").classList.remove("jobs");
     document.querySelector("main").classList.remove("alcohol");
     document.querySelector("main").classList.add(classVar);
 }
