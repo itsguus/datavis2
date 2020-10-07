@@ -22,8 +22,43 @@
     <h1>What about alcohol?</h1>
     <h2 class="question">Great question.</h2>
     <div class="chart">
-
-        <div class="image" style="background: url('/datavis2/img/alcohol.svg') center center / cover" alt=""> </div>
+        <p>This stacked bar chart shows the ratio of glasses of <span>water</span> and <span>alcohol</span> drunk per week. We've seperated the results based on how happy the students are. 10 is very happy. 1 is not so happy.</p>
+        <div class="image" style="background: url('/img/alcohol.svg') center center / cover" alt="">
+            {% for i in (1..10) %}
+                <div class="bar">
+                    {% if forloop.index == 7 %}
+                    <span>No data</span>
+                    {% endif %}
+                    <div class="water">
+                        <span>
+                        {% if forloop.index == 1 %}49{% endif %}
+                        {% if forloop.index == 2 %}42{% endif %}
+                        {% if forloop.index == 3 %}33{% endif %}
+                        {% if forloop.index == 4 %}46{% endif %}
+                        {% if forloop.index == 5 %}53{% endif %}
+                        {% if forloop.index == 6 %}21{% endif %}
+                        {% if forloop.index == 8 %}35{% endif %}
+                        {% if forloop.index == 9 %}7{% endif %}
+                        {% if forloop.index == 10 %}280{% endif %}
+                    </span>
+                    </div>
+                    <div class="alcohol">
+                        <span>
+                            {% if forloop.index == 1 %}11{% endif %}
+                            {% if forloop.index == 2 %}6{% endif %}
+                            {% if forloop.index == 3 %}7{% endif %}
+                            {% if forloop.index == 4 %}4{% endif %}
+                            {% if forloop.index == 5 %}2{% endif %}
+                            {% if forloop.index == 6 %}2{% endif %}
+                            {% if forloop.index == 8 %}5{% endif %}
+                            {% if forloop.index == 9 %}6{% endif %}
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+            <span>Water</span>
+            <span>Alcohol</span>
+        </div>
     </div>
 </section>
 

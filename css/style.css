@@ -48,11 +48,58 @@ main.alcohol section.drug .chart .bar.one {background:#bbb;}
 main.alcohol section.drug .chart .bar.two {background: #bbb;} 
 main.alcohol section.drug .chart .bar.three {background: #bbb;}
 
-section.alcohol {color: #e9c46a; height: 80rem; margin-top: 8rem; }
+section.alcohol {color: #e9c46a; height: 100rem; margin-top: 8rem; }
 section.alcohol h1 {text-align: center; position: sticky; top: 3rem;}
 section.alcohol h2.question {text-align: center; position: sticky; top: 8rem; font-size: 1rem; opacity: 0; transition: 500ms ease;}
 section.alcohol h2.question.active {opacity: 1;}
 
-section.alcohol .chart {display: flex; justify-content: center; position: sticky; top:10rem; opacity: 0; transition: 500ms ease;}
+section.alcohol .chart {display: flex; position: relative; justify-content: center; position: sticky; top:10rem; opacity: 0; transition: 500ms ease;}
 section.alcohol .chart.active {opacity: 1;}
-section.alcohol div.image {width: 30.9rem; height: 21rem;}
+section.alcohol .chart p {width: 20%; font-size: 0.7rem; color: #FFF; margin-right: 10%;}
+section.alcohol .chart p span:first-of-type {font-weight: 600; color: #2a9d8f;}
+section.alcohol .chart p span:last-of-type {font-weight: 600; color: #e9c46a;}
+section.alcohol div.image {width: 30.9rem; height: 23.9rem;}
+
+section.alcohol .image .bar {height: 6.88%; background:rgba(219,219,219,0.4); margin: 1.32% 0; margin-left: 12.7%; position: relative; display: flex;  overflow: hidden; width: 0; transition: 500ms ease; }
+section.alcohol .image .bar > div {height: 100%; width: 2rem; color: rgba(255,255,255,0.8); font-size: 0.6rem; display: flex; justify-content: center; align-items: center;}
+section.alcohol .image .bar .water{background: #2a9d8f;}
+section.alcohol .image .bar .alcohol{background: #e9c46a;}
+section.alcohol .image .bar.active {width: 87.3%;}
+
+
+section.alcohol .image .bar:nth-of-type(1) .alcohol {width: 18.3%}
+section.alcohol .image .bar:nth-of-type(1) .water {width: 81.7%}
+
+section.alcohol .image .bar:nth-of-type(2) .alcohol {width: 12.8%}
+section.alcohol .image .bar:nth-of-type(2) .water {width: 87.2%}
+
+section.alcohol .image .bar:nth-of-type(3) .alcohol {width: 17.5%}
+section.alcohol .image .bar:nth-of-type(3) .water {width: 82.5%}
+
+section.alcohol .image .bar:nth-of-type(4) .alcohol {width: 8%}
+section.alcohol .image .bar:nth-of-type(4) .water {width: 92%}
+
+section.alcohol .image .bar:nth-of-type(5) .alcohol {width: 3.6%}
+section.alcohol .image .bar:nth-of-type(5) .water {width: 96.4%}
+
+section.alcohol .image .bar:nth-of-type(6) .alcohol {width: 8.7%}
+section.alcohol .image .bar:nth-of-type(6) .water {width: 91.3%}
+
+
+section.alcohol .image .bar:nth-of-type(7) {justify-content: center; align-items: center;}
+section.alcohol .image .bar:nth-of-type(7) span {font-size: 0.6rem; color: rgba(255,255,255,0.4);}
+section.alcohol .image .bar:nth-of-type(7) .alcohol,
+section.alcohol .image .bar:nth-of-type(7) .water {width: 0;}
+
+section.alcohol .image .bar:nth-of-type(8) .alcohol {width: 12.5%}
+section.alcohol .image .bar:nth-of-type(8) .water {width: 87.5%}
+
+section.alcohol .image .bar:nth-of-type(9) .alcohol {width: 53.9%}
+section.alcohol .image .bar:nth-of-type(9) .water {width: 46.1%}
+
+section.alcohol .image .bar:nth-of-type(10) .alcohol {width: 0.0%}
+section.alcohol .image .bar:nth-of-type(10) .water {width: 100%}
+
+.image > span {font-weight: 600; font-size: 0.6rem;}
+.image > span:nth-of-type(1) {color: #2a9d8f; margin-left: 3.7rem;}
+.image > span:nth-of-type(2) {margin-left: 22.7rem;}
