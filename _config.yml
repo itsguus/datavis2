@@ -1,8 +1,7 @@
-title: Digital Madman
-description: 
-url:
+title: Datavis 2 - Guus Groenink
+description: Uitwerking van opdracht 4.
+url: https://itsguus.github.io/datavis2/
 
-permalink: /blog/:title/
 
 defaults:
   -
@@ -10,15 +9,4 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "page"
-    scope:
-      path: "" # an empty string here means all files in the project
-      type: posts
-    values:
-      layout: "post"
 
-
-
-collections:
-  products:
-    output: true
-    permalink: /products/:title/
