@@ -30,8 +30,8 @@ section.introduction h1 {text-align: center;}
 section.introduction h2 {text-align: center; margin-top: 2rem;}
 
 section.drug {display: flex; margin-top: 2rem;}
-section.drug > h2 {transform: rotate(90deg); position: absolute; top: 60rem; left: 0rem; font-size: 1rem;}
-section.drug .text {position: sticky; height: 3rem; top: 13rem; left: 0; width: calc(40% - 2rem); margin: 1rem; margin-right: 5rem;}
+section.drug > h2 {transform: rotate(90deg); position: absolute; top: 60rem; left: -2rem; font-size: 1rem;}
+section.drug .text {position: sticky; height: 10rem; top: 13rem; left: 0; width: calc(40% - 2rem); margin: 1rem; margin-right: 5rem;}
 section.drug .chart {width: calc(60% - 2rem); margin: 1rem; height: 80rem; display: flex; justify-content: center;}
 section.drug .chart .bar {width: 15%;  height: 1rem; min-height: 1rem;  margin: 0 1rem; position: relative; display: flex; align-items: flex-end; justify-content: center; transition: 100ms linear;}
 section.drug .chart .bar > span:first-of-type { align-self: flex-start; position: sticky;  top: 0; display: block; font-size: 0.75rem; text-align: center; font-weight: 600; transform: translateY(-2rem); transition: 500ms ease;}
@@ -42,3 +42,17 @@ section.drug .chart .bar.three {max-height: 78rem; background: #f4a261;}
 
 main.drugs section.drug .chart .bar > span:first-of-type { transform: translateY(1rem); margin-bottom: 2rem;}
 main.drugs {background: #e9c46a; }
+
+main.alcohol {background: #264653;}
+main.alcohol section.drug .chart .bar.one {background:#bbb;}
+main.alcohol section.drug .chart .bar.two {background: #bbb;} 
+main.alcohol section.drug .chart .bar.three {background: #bbb;}
+
+section.alcohol {color: #e9c46a; height: 80rem; margin-top: 8rem; }
+section.alcohol h1 {text-align: center; position: sticky; top: 3rem;}
+section.alcohol h2.question {text-align: center; position: sticky; top: 8rem; font-size: 1rem; opacity: 0; transition: 500ms ease;}
+section.alcohol h2.question.active {opacity: 1;}
+
+section.alcohol .chart {display: flex; justify-content: center; position: sticky; top:10rem; opacity: 0; transition: 500ms ease;}
+section.alcohol .chart.active {opacity: 1;}
+section.alcohol div.image {width: 30.9rem; height: 21rem;}
