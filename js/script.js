@@ -64,22 +64,22 @@ function scrollFunction() {
 
         if (scrollHeight > 3750) alcBars[9].classList.add("active");
         else alcBars[9].classList.remove("active");
-        
-        var jobsCalc = scrollHeight - 4500; 
-        document.querySelector(".large h1").style = "transform: scale(" + (470 - (jobsCalc * (469/1600))) + "); margin-left: -" + (96 - (jobsCalc * (96/1600))) + "rem";
+
+        var jobsCalc = scrollHeight - 4500;
+        document.querySelector(".large h1").style = "transform: scale(" + (470 - (jobsCalc * (469 / 1600))) + "); margin-left: -" + (96 - (jobsCalc * (96 / 1600))) + "rem";
 
     }
     else if (scrollHeight > 4500 && scrollHeight < 7150) { // SECTION JOBS
         if (!document.querySelector("main").classList.contains("jobs")) inPicture("jobs");
-        var jobsCalc = scrollHeight - 4500; 
+        var jobsCalc = scrollHeight - 4500;
         if (jobsCalc > 1600) jobsCalc = 1600;
-        document.querySelector(".large h1").style = "transform: scale(" + (470 - (jobsCalc * (469/1600))) + "); margin-left: -" + (96 - (jobsCalc * (96/1600))) + "rem";
+        document.querySelector(".large h1").style = "transform: scale(" + (470 - (jobsCalc * (469 / 1600))) + "); margin-left: -" + (96 - (jobsCalc * (96 / 1600))) + "rem";
 
         if (scrollHeight > 6300) document.querySelector("section.bijbaan p:first-of-type").classList.add("active");
         else document.querySelector("section.bijbaan p").classList.remove("active");
         if (scrollHeight > 6500) document.querySelector("section.bijbaan p:first-of-type").classList.remove("active");
-        
-        if (scrollHeight > 6580) { 
+
+        if (scrollHeight > 6580) {
             document.querySelector("section.bijbaan h1").classList.add("active");
             document.querySelector("section.bijbaan p:last-of-type").classList.add("active");
         }
@@ -92,16 +92,43 @@ function scrollFunction() {
         else document.querySelector("section.bijbaantwee .left h2").classList.remove("active");
         if (scrollHeight > 6850) document.querySelector("section.bijbaantwee .right h2").classList.add("active");
         else document.querySelector("section.bijbaantwee .right h2").classList.remove("active");
-        
+
     }
-    else if(scrollHeight >= 7150) {
+    else if (scrollHeight >= 7150 && scrollHeight < 9000) {
         if (!document.querySelector("main").classList.contains("jobstwo")) inPicture("jobstwo");
-        
+
         if (scrollHeight > 8000) document.querySelector("section.bijbaan .pie").classList.add("active");
         else document.querySelector("section.bijbaan .pie").classList.remove("active");
-        console.log(scrollHeight);
-        
+    }
+    else if (scrollHeight > 9000 && scrollHeight <= 11500) {
+        if (!document.querySelector("main").classList.contains("future")) inPicture("future");
+        if (scrollHeight > 6750) document.querySelector("section.bijbaantwee .left h2").classList.add("active");
 
+        if (scrollHeight > 10100) document.querySelector("section.futuristic .charts .bar:nth-of-type(1)").classList.add("active");
+        else document.querySelector("section.futuristic .charts .bar:nth-of-type(1)").classList.remove("active");
+
+        if (scrollHeight > 10250) document.querySelector("section.futuristic .charts .bar:nth-of-type(2)").classList.add("active");
+        else document.querySelector("section.futuristic .charts .bar:nth-of-type(2)").classList.remove("active");
+
+        if (scrollHeight > 10400) document.querySelector("section.futuristic .charts .bar:nth-of-type(3)").classList.add("active");
+        else document.querySelector("section.futuristic .charts .bar:nth-of-type(3)").classList.remove("active");
+
+        if (scrollHeight > 10600) document.querySelector("section.futuristic .charts .bar:nth-of-type(2)").classList.add("colored");
+        else document.querySelector("section.futuristic .charts .bar:nth-of-type(2)").classList.remove("colored");
+
+        if (scrollHeight > 10900) document.querySelector("section.futuristic .charts").classList.add("full");
+        else document.querySelector("section.futuristic .charts").classList.remove("full");
+        
+    }
+    else if (scrollHeight > 11500 && scrollHeight <= 13300) {
+        if (!document.querySelector("main").classList.contains("directionwise")) inPicture("directionwise");
+
+        if (scrollHeight > 12750) document.querySelector("section.direction .chart").classList.add("active");
+        else document.querySelector("section.direction .chart").classList.remove("active");
+
+    }
+    else if (scrollHeight > 13300) {
+        if (!document.querySelector("main").classList.contains("end")) inPicture("end");
     }
 }
 
@@ -111,9 +138,16 @@ document.querySelector("main").addEventListener("scroll", scrollFunction);
 function inPicture(classVar) {
     document.querySelector("main").classList.remove("intro");
     document.querySelector("main").classList.remove("drugs");
+    document.querySelector("main").classList.remove("directionwise");
+    document.querySelector("main").classList.remove("end");
+    document.querySelector("main").classList.remove("future");
     document.querySelector("main").classList.remove("jobs");
     document.querySelector("main").classList.remove("jobstwo");
     document.querySelector("main").classList.remove("alcohol");
     document.querySelector("main").classList.add(classVar);
 }
 
+
+function scrollToTop() {
+    document.querySelector("main").scrollTo(0,0);
+}

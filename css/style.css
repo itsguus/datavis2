@@ -22,7 +22,7 @@ h4 {font-size: 1.2rem;}
 }
 
 body {display: flex; justify-content: center; align-items: center; height: 100vh;}
-main { width: 70rem; height: 40rem; background: #fff; box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.05); overflow: scroll; position: relative; transition: background 500ms ease;}
+main { width: 70rem; height: 40rem; background: #fff; box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.05); overflow: scroll; position: relative; transition: background 500ms ease; overflow-x: hidden;}
 section {position: relative;}
 
 section.introduction {height: 100%; display: flex; flex-direction: column; justify-content: center; } 
@@ -122,12 +122,15 @@ section.bijbaan p:last-of-type {text-align: center; font-size: 0.8rem; transitio
 section.bijbaan p.active {opacity: 1;}
 section.bijbaan h1.active {font-size: 2rem; margin-top: 3rem; }
 
+main.future section.bijbaan .large {display: none;}
+main.directionwise section.bijbaan .large {display: none;}
+main.end section.bijbaan .large {display: none;}
 
-section.bijbaan .pie {margin-top: 120rem; display: flex; justify-content: center; position: sticky; top: 15rem;}
+section.bijbaan .pie {margin-top: 120rem; display: flex; justify-content: center; position: sticky; top: 13rem;}
 section.bijbaan .pie.active {position:relative;}
 section.bijbaan .pie .chart { width: 15rem; height: 15rem; border-radius: 50%;   position: relative; transition: 1s ease; overflow:hidden;}
 
-section.bijbaan .pie .chart .job {position: absolute; background: #264653; width: 100%; height: 100%; border-radius: 50%;  transition: 1s ease; top:0; transition-property: border-radius; transition-delay: 0s; pointer-events: none;}
+section.bijbaan .pie .chart .job {position: absolute; background: #2a9d8f; width: 100%; height: 100%; border-radius: 50%;  transition: 1s ease; top:0; transition-property: border-radius; transition-delay: 0s; pointer-events: none;}
 section.bijbaan .pie .chart .nojob {position: absolute; background: #e76f51; width: 100%; height: 100%; top: -50%; left: -50%; opacity: 1; transition: 300ms ease; transition-delay: 0; }
 section.bijbaan .pie .chart .nojob::before {content: ""; display:block; position: absolute; background: #e76f51; width: 100%; height: 100%;  top: 0; opacity: 1; transform: rotate(-14.4deg); transform-origin: bottom right; transition: 300ms ease;}
 
@@ -136,25 +139,28 @@ section.bijbaan .pie .chart .job div > span {position: absolute; right: 18%; bot
 
 
 main.jobstwo section.bijbaan .pie .chart {border-radius: 0; width: 75rem; height: 75rem;}
-main.jobstwo section.bijbaan .pie .chart .job {position: absolute; background: #264653;  width: 100%; height: 100%; top:20%; border-radius: 0; overflow: visible; transition-delay: 300ms; transition-property: top;}
+main.jobstwo section.bijbaan .pie .chart .job {position: absolute; background: #2a9d8f;  width: 100%; height: 100%; top:20%; border-radius: 0; overflow: visible; transition-delay: 300ms; transition-property: top;}
 main.jobstwo section.bijbaan .pie .chart .nojob {position: absolute; background: #e76f51; width: 29%; height: 100%; top: 00%; left:0 ; opacity: 1; }
 main.jobstwo section.bijbaan .pie .chart .nojob::before {transform: rotate(0);}
-main.jobstwo section.bijbaantwee h2 {position: fixed; top: 35rem; pointer-events: none; text-align: center; margin: 0 auto; width: 35rem; font-size: 1rem; margin-left: -5rem; font-weight: 600; color: #264653; opacity: 0; transition: 300ms ease;}
+main.jobstwo section.bijbaantwee h2 {position: fixed; top: 35rem; pointer-events: none; text-align: center; margin: 0 auto; width: 35rem; font-size: 1rem; margin-left: -5rem; font-weight: 600; color: #2a9d8f; opacity: 0; transition: 300ms ease;}
 main.jobstwo section.bijbaan .pie.active .chart .job { height: 2rem; }
 
 
 
 section.bijbaantwee {display: flex; height: 80rem;}
-section.bijbaantwee > div {top: 5rem; width: 71%; height: 100%; background: #264653;  margin-top: 25rem; display: flex; flex-direction: column; align-items: center;}
+section.bijbaantwee > div {top: 5rem; width: 71%; height: 100%; background: #2a9d8f;  margin-top: 25rem; display: flex; flex-direction: column; align-items: center; z-index: 2;}
 section.bijbaantwee > .left {background: #e76f51; width: 29%;}
-section.bijbaantwee h2 {position: fixed; top: 35rem; pointer-events: none; text-align: center; margin: 0 auto; width: 33rem; font-size: 1rem; margin-left: 4rem; font-weight: 600; color: #264653; opacity: 0; transition: 300ms ease;}
+section.bijbaantwee h2 {position: fixed; top: 33rem; pointer-events: none; text-align: center; margin: 0 auto; width: 33rem; font-size: 1rem; margin-left: 4rem; font-weight: 600; color: #2a9d8f; opacity: 0; transition: 300ms ease;}
+main.future section.bijbaantwee h2,
+main.end section.bijbaantwee h2,
+main.directionwise section.bijbaantwee h2 {display: none;}
 section.bijbaantwee h2.active {opacity: 1;}
-section.bijbaantwee .left h2 {top: 21rem; margin-left: 19rem; color: #e76f51;}
+section.bijbaantwee .left h2 {top: 19rem; margin-left: 19rem; color: #e76f51;}
 
-section.bijbaantwee h3 {text-align: center; padding-top: 2rem; padding-bottom: 1rem; background:#e76f51; color: #FFF; position: sticky; top: 0rem; margin-top: 0; width: 100%;}
-section.bijbaantwee .right h3 {background: #264653; z-index: 6;}
+section.bijbaantwee h3 {text-align: center; padding-top: 2rem; padding-bottom: 1rem; background:#e76f51; color: #FFF; position: sticky; top: 0rem; margin-top: 0; width: 100%; margin-bottom: 11.3rem;}
+section.bijbaantwee .right h3 {background: #2a9d8f; z-index: 6;}
 
-section.bijbaantwee .card { position: sticky; top: 10rem; display: flex; flex-direction: column; align-items: center; border: 2px solid #FFF; color: #FFF; width: 7rem; text-align: center; padding: 1rem 0.5rem; font-size: 0.6rem; border-radius: 1px;}
+section.bijbaantwee .card { position: sticky; top: 10rem; display: flex; flex-direction: column; align-items: center; border: 2px solid #FFF; color: #FFF; width: 7rem; text-align: center; padding: 1rem 0.5rem; font-size: 0.6rem; border-radius: 1px; margin-bottom: 2rem;}
 section.bijbaantwee .card span { font-size: 3.8rem; font-weight: 600; margin-top: -1rem;}
 
 section.bijbaantwee .left .card {top: 15rem;}
@@ -167,3 +173,61 @@ section.bijbaantwee .right .scatter .dot {width: 0.6rem; height: 0.6rem; display
 section.bijbaantwee .right .scatter .dot2 {width: 0.35rem; height: 0.35rem; position: absolute; background: #e9c46a;  display: block; border-radius: 50%; top:22%;left:22%; } 
 section.bijbaantwee .right .scatter .dot span {opacity: 0;  display: flex; visibility:  hidden;  position: absolute; font-size: 0.4rem; font-weight: 400; width: 2.7rem; color: #FFF; border: 1px solid white; padding: 0.1rem; top: -1.5rem; right: -2.9rem; transition: 300ms ease; background: #264653; z-index: 4;border-radius: 2px;}
 section.bijbaantwee .right .scatter .dot:hover span {opacity: 1; visibility: visible;}
+
+main.future {background: #264653; }
+section.futuristic { height: 70rem;}
+section.futuristic h1 {margin-top: 29rem; margin-left: 5rem; font-weight: 300; color: #FFF; position: sticky; top: 2rem; margin-bottom: 30rem;}
+section.futuristic h1 span {font-weight: 600;}
+section.futuristic .charts {border-bottom: 3px solid #FFF; width: 86%; height: 27rem; margin: 0 auto; margin-top: -30rem; top:8rem; position: sticky; display: flex; justify-content: space-around; align-items: flex-end; transition: 1s ease;}
+section.futuristic .charts .bar { background: #e9c46a; width: 25%; height: 0; overflow: hidden; display: flex; justify-content: center; transition: 1s ease;}
+section.futuristic .charts .bar.active {height: 100%; }
+section.futuristic .charts .bar span:first-of-type {color: #FFF; margin-top: -2rem; position: absolute; opacity: 0; transition: 1s ease;}
+section.futuristic .charts .bar.active span:first-of-type { opacity: 1; }
+section.futuristic .charts .bar:nth-of-type(1) {max-height: calc(7.3 * 3.1rem); margin-left: 2rem;}
+section.futuristic .charts .bar:nth-of-type(2) {max-height: calc(7.5 * 3.1rem); z-index: 2;}
+section.futuristic .charts .bar:nth-of-type(3) {max-height: calc(7.1 * 3.1rem);}
+
+section.futuristic .charts h2 {position: absolute; color: #FFF; transform: rotate(-90deg); left: -2.5rem; font-size: 0.6rem; bottom: 5rem;}
+section.futuristic .charts .bar span:last-of-type { font-size: 0.7rem;  margin: 1rem 2rem; text-align: center; font-weight: 400;  width: 11rem;}
+
+section.futuristic .charts .bar.colored {background: #e76f51;}
+section.futuristic .charts.full {width: 100%; border-bottom: 2px solid transparent;}
+section.futuristic .charts.full .bar {width: 0; margin: 0 !important; }
+section.futuristic .charts.full .bar span {opacity: 0 !important; visibility: hidden;}
+section.futuristic .charts.full .bar:nth-of-type(2) { width: 70rem; flex-shrink: 0; margin-bottom: -50rem !important; padding-bottom: 50rem;}
+
+
+main.directionwise {background: #e76f51;}
+.length {margin-top: 40rem; height: 50rem;}
+
+section.direction { color: #264653;}
+section.direction h1 {text-align: center; margin-top: 10rem; margin-bottom: 50rem;}
+section.direction .chart {height: 50rem;}
+section.direction h1.cmd {position: sticky; top: 3rem; margin: 10rem 0 32rem 0; color: #1d1a1c; display: flex; justify-content: center;}
+section.direction h1 > div {display: inline-block; overflow: hidden; width: 1.2ch; transition: 1s ease;} 
+section.direction h1 > div:nth-of-type(2) { width: 1.4ch; }
+section.direction h1 > div:nth-of-type(3) { width: 1.1ch; }
+
+section.direction .chart.active h1.cmd > div {width: 33%; font-size: 1rem;}
+
+section.direction .bars {border-bottom: 3px solid #FFF; width: 95%; height: 27rem; margin: 0 auto; margin-top: -30rem; top:8rem; position: sticky; display: flex; justify-content: space-around; align-items: flex-end; transition: 1s ease;}
+section.direction .bars .bar { background: #e9c46a; width: 25%; height: 100%; overflow: hidden; display: flex; justify-content: center; transition: 1s ease;}
+section.direction .bars .bar span {color: #FFF;}
+section.direction .bars .bar span:first-of-type {color: #1d1a1c; margin-top: -2rem; position: absolute; opacity: 1; transition: 1s ease; font-weight: 600;}
+section.direction .bars .bar:nth-of-type(1) {max-height: calc(8.3 * 3.1rem); margin-left: -1.5rem; background:#264653}
+section.direction .bars .bar:nth-of-type(2) {max-height: calc(7.3 * 3.1rem); z-index: 2; margin-left: 1rem; background: #2a9d8f;}
+section.direction .bars .bar:nth-of-type(3) {max-height: calc(7.3 * 3.1rem); margin-right: -1.5rem;}
+
+section.direction .bars h2 {position: absolute; color: #FFF; transform: rotate(-90deg); left: -4rem; font-size: 0.6rem; bottom: 5rem;}
+section.direction .bars .bar span:last-of-type { font-size: 0.7rem;  margin: 1rem 2rem; text-align: center; font-weight: 400;  width: 11rem;}
+
+main.end section.direction .bars { border-bottom: 3px solid #aaa;}
+main.end section.direction .bars .bar {background: #ccc;}
+main.end section.direction .bars span {color: #aaa !important;}
+main.end section.direction .bars h2 {color: #aaa !important;}
+
+
+section.end { margin-top: 20rem; height: 36rem; display: flex; flex-direction: column; align-items: center;}
+section.end h1 {margin-left: -15rem; margin-bottom: 3rem;}
+section.end h2 {margin-right: -25rem; font-size: 0.8rem; margin-top: 2rem; }
+section.end > a {padding: 1rem 2rem; background: #264653; border-radius: 2px; margin-top: 3rem; color: #FFF; font-weight: 600; cursor: pointer;}
