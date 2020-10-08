@@ -61,7 +61,7 @@ section.alcohol .chart p span:last-of-type {font-weight: 600; color: #e9c46a;}
 section.alcohol div.image {width: 30.9rem; height: 23.9rem;}
 
 section.alcohol .image .bar {height: 6.88%; background:rgba(219,219,219,0.4); margin: 1.32% 0; margin-left: 12.7%; position: relative; display: flex;  overflow: hidden; width: 0; transition: 500ms ease; }
-section.alcohol .image .bar > div {height: 100%; width: 2rem; color: rgba(255,255,255,0.8); font-size: 0.6rem; display: flex; justify-content: center; align-items: center;}
+section.alcohol .image .bar > div {height: 100%; color: rgba(255,255,255,0.8); font-size: 0.6rem; display: flex; justify-content: center; align-items: center;}
 section.alcohol .image .bar .water{background: #2a9d8f;}
 section.alcohol .image .bar .alcohol{background: #e9c46a;}
 section.alcohol .image .bar.active {width: 87.3%;}
@@ -104,23 +104,66 @@ section.alcohol .image .bar:nth-of-type(10) .water {width: 100%}
 .image > span:nth-of-type(1) {color: #2a9d8f; margin-left: 3.7rem;}
 .image > span:nth-of-type(2) {margin-left: 22.7rem;}
 
-#peiler {position: absolute; top: 0; height: 6650px; width: 10px; background: red;}
+#peiler {position: absolute; top: 0; height: 7250px; width: 10px; background: red;}
 
-main.jobs {background: #e9c46a;}
+main.jobs, main.jobstwo {background: #e9c46a;}
 main.jobs section.alcohol .image .bar .alcohol{background: rgba(0,0,0,0.1);}
 main.jobs section.alcohol .image .bar .water{background: rgba(0,0,0,0.2);}
 main.jobs .image > span:nth-of-type(2) {color: rgba(0,0,0,0.2); }
 main.jobs .image > span:nth-of-type(1) {color: rgba(0,0,0,0.5); }
 
-section.bijbaan {height: 150rem;} 
+section.bijbaan {height: 40rem;} 
 
 section.bijbaan .large {position: fixed; top: 0rem; left: 0rem; height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; pointer-events: none;}
 section.bijbaan .large .overflower {overflow: hidden; width: 70rem; height: 40rem;}
 section.bijbaan h1 {font-size: 1.5rem; transform: scale(470); text-align: center; margin-left: -95rem; margin-top: 15rem; transition:100ms ease;}
-section.bijbaan p {text-align: center; margin-left: 4rem; font-size: 0.8rem; transition: 500ms ease; opacity: 0;}
+section.bijbaan p:first-of-type {text-align: center; margin-left: 4rem; font-size: 0.8rem; transition: 500ms ease; opacity: 0;}
+section.bijbaan p:last-of-type {text-align: center; font-size: 0.8rem; transition: 500ms ease; opacity: 0; margin-top: -1rem;}
 section.bijbaan p.active {opacity: 1;}
 section.bijbaan h1.active {font-size: 2rem; margin-top: 3rem; }
 
 
-section.bijbaan .pie {margin-top: 120rem; display: flex; justify-content: center; position: sticky; top: 10rem;}
-section.bijbaan .pie .chart { width: 15rem; height: 15rem; border-radius: 50%; border: 2px solid #1d1a1c; background: conic-gradient(at 50% 50%, #fff, #000); }
+section.bijbaan .pie {margin-top: 120rem; display: flex; justify-content: center; position: sticky; top: 15rem;}
+section.bijbaan .pie.active {position:relative;}
+section.bijbaan .pie .chart { width: 15rem; height: 15rem; border-radius: 50%;   position: relative; transition: 1s ease; overflow:hidden;}
+
+section.bijbaan .pie .chart .job {position: absolute; background: #264653; width: 100%; height: 100%; border-radius: 50%;  transition: 1s ease; top:0; transition-property: border-radius; transition-delay: 0s; pointer-events: none;}
+section.bijbaan .pie .chart .nojob {position: absolute; background: #e76f51; width: 100%; height: 100%; top: -50%; left: -50%; opacity: 1; transition: 300ms ease; transition-delay: 0; }
+section.bijbaan .pie .chart .nojob::before {content: ""; display:block; position: absolute; background: #e76f51; width: 100%; height: 100%;  top: 0; opacity: 1; transform: rotate(-14.4deg); transform-origin: bottom right; transition: 300ms ease;}
+
+section.bijbaan .pie .chart .job > span {position: absolute; right: 20%; bottom: 25%; color: white; font-weight: 600;}
+section.bijbaan .pie .chart .job div > span {position: absolute; right: 18%; bottom: 15%; color: white; font-weight: 600;}
+
+
+main.jobstwo section.bijbaan .pie .chart {border-radius: 0; width: 75rem; height: 75rem;}
+main.jobstwo section.bijbaan .pie .chart .job {position: absolute; background: #264653;  width: 100%; height: 100%; top:20%; border-radius: 0; overflow: visible; transition-delay: 300ms; transition-property: top;}
+main.jobstwo section.bijbaan .pie .chart .nojob {position: absolute; background: #e76f51; width: 29%; height: 100%; top: 00%; left:0 ; opacity: 1; }
+main.jobstwo section.bijbaan .pie .chart .nojob::before {transform: rotate(0);}
+main.jobstwo section.bijbaantwee h2 {position: fixed; top: 35rem; pointer-events: none; text-align: center; margin: 0 auto; width: 35rem; font-size: 1rem; margin-left: -5rem; font-weight: 600; color: #264653; opacity: 0; transition: 300ms ease;}
+main.jobstwo section.bijbaan .pie.active .chart .job { height: 2rem; }
+
+
+
+section.bijbaantwee {display: flex; height: 80rem;}
+section.bijbaantwee > div {top: 5rem; width: 71%; height: 100%; background: #264653;  margin-top: 25rem; display: flex; flex-direction: column; align-items: center;}
+section.bijbaantwee > .left {background: #e76f51; width: 29%;}
+section.bijbaantwee h2 {position: fixed; top: 35rem; pointer-events: none; text-align: center; margin: 0 auto; width: 33rem; font-size: 1rem; margin-left: 4rem; font-weight: 600; color: #264653; opacity: 0; transition: 300ms ease;}
+section.bijbaantwee h2.active {opacity: 1;}
+section.bijbaantwee .left h2 {top: 21rem; margin-left: 19rem; color: #e76f51;}
+
+section.bijbaantwee h3 {text-align: center; padding-top: 2rem; padding-bottom: 1rem; background:#e76f51; color: #FFF; position: sticky; top: 0rem; margin-top: 0; width: 100%;}
+section.bijbaantwee .right h3 {background: #264653; z-index: 6;}
+
+section.bijbaantwee .card { position: sticky; top: 10rem; display: flex; flex-direction: column; align-items: center; border: 2px solid #FFF; color: #FFF; width: 7rem; text-align: center; padding: 1rem 0.5rem; font-size: 0.6rem; border-radius: 1px;}
+section.bijbaantwee .card span { font-size: 3.8rem; font-weight: 600; margin-top: -1rem;}
+
+section.bijbaantwee .left .card {top: 15rem;}
+section.bijbaantwee .right .card {margin-top: 8rem; top: 15rem;}
+
+section.bijbaantwee .right .scatter {width: 32rem; position: relative; margin-top: 10rem;}
+section.bijbaantwee .right .scatter img {width: 100%; height: auto;}
+section.bijbaantwee .right .scatter .rooster { position: absolute;width: 28.25rem; height: 17.5rem; left:3.7rem; top:0; }
+section.bijbaantwee .right .scatter .dot {width: 0.6rem; height: 0.6rem; display: block; border-radius: 50%; position: absolute; top: 0; left: 0; margin-top: -0.15rem;}
+section.bijbaantwee .right .scatter .dot2 {width: 0.35rem; height: 0.35rem; position: absolute; background: #e9c46a;  display: block; border-radius: 50%; top:22%;left:22%; } 
+section.bijbaantwee .right .scatter .dot span {opacity: 0;  display: flex; visibility:  hidden;  position: absolute; font-size: 0.4rem; font-weight: 400; width: 2.7rem; color: #FFF; border: 1px solid white; padding: 0.1rem; top: -1.5rem; right: -2.9rem; transition: 300ms ease; background: #264653; z-index: 4;border-radius: 2px;}
+section.bijbaantwee .right .scatter .dot:hover span {opacity: 1; visibility: visible;}

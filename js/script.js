@@ -69,19 +69,38 @@ function scrollFunction() {
         document.querySelector(".large h1").style = "transform: scale(" + (470 - (jobsCalc * (469/1600))) + "); margin-left: -" + (96 - (jobsCalc * (96/1600))) + "rem";
 
     }
-    else if (scrollHeight > 4500 ) { // SECTION JOBS
+    else if (scrollHeight > 4500 && scrollHeight < 7150) { // SECTION JOBS
         if (!document.querySelector("main").classList.contains("jobs")) inPicture("jobs");
         var jobsCalc = scrollHeight - 4500; 
         if (jobsCalc > 1600) jobsCalc = 1600;
-        console.log(scrollHeight);
         document.querySelector(".large h1").style = "transform: scale(" + (470 - (jobsCalc * (469/1600))) + "); margin-left: -" + (96 - (jobsCalc * (96/1600))) + "rem";
 
-        if (scrollHeight > 6160) document.querySelector("section.bijbaan p").classList.add("active");
+        if (scrollHeight > 6300) document.querySelector("section.bijbaan p:first-of-type").classList.add("active");
         else document.querySelector("section.bijbaan p").classList.remove("active");
-        if (scrollHeight > 6300) document.querySelector("section.bijbaan p").classList.remove("active");
+        if (scrollHeight > 6500) document.querySelector("section.bijbaan p:first-of-type").classList.remove("active");
         
-        if (scrollHeight > 6400) document.querySelector("section.bijbaan h1").classList.add("active");
-        else document.querySelector("section.bijbaan h1").classList.remove("active");
+        if (scrollHeight > 6580) { 
+            document.querySelector("section.bijbaan h1").classList.add("active");
+            document.querySelector("section.bijbaan p:last-of-type").classList.add("active");
+        }
+        else {
+            document.querySelector("section.bijbaan h1").classList.remove("active");
+            document.querySelector("section.bijbaan p:last-of-type").classList.remove("active");
+        }
+
+        if (scrollHeight > 6750) document.querySelector("section.bijbaantwee .left h2").classList.add("active");
+        else document.querySelector("section.bijbaantwee .left h2").classList.remove("active");
+        if (scrollHeight > 6850) document.querySelector("section.bijbaantwee .right h2").classList.add("active");
+        else document.querySelector("section.bijbaantwee .right h2").classList.remove("active");
+        
+    }
+    else if(scrollHeight >= 7150) {
+        if (!document.querySelector("main").classList.contains("jobstwo")) inPicture("jobstwo");
+        
+        if (scrollHeight > 8000) document.querySelector("section.bijbaan .pie").classList.add("active");
+        else document.querySelector("section.bijbaan .pie").classList.remove("active");
+        console.log(scrollHeight);
+        
 
     }
 }
@@ -93,6 +112,7 @@ function inPicture(classVar) {
     document.querySelector("main").classList.remove("intro");
     document.querySelector("main").classList.remove("drugs");
     document.querySelector("main").classList.remove("jobs");
+    document.querySelector("main").classList.remove("jobstwo");
     document.querySelector("main").classList.remove("alcohol");
     document.querySelector("main").classList.add(classVar);
 }

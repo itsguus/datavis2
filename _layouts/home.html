@@ -1,5 +1,5 @@
 {% include header.html %}
-<div id="peiler"></div>
+<!-- <div id="peiler"></div> -->
 <section class="introduction">
     <h1>How to be a happy CMD student.</h1>
     <h2>A data visualisation</h2>
@@ -14,7 +14,8 @@
     </div>
     <div class="text">
         <h1>So, drugs.</h1>
-        <p>We asked 94 CMD students what kind of drugs they do. Then, we asked them to rate how satisfied they are with their lives on a scale from 1 tot 10.</p>
+        <p>We asked 94 CMD students what kind of drugs they do. Then, we asked them to rate how satisfied they are with
+            their lives on a scale from 1 tot 10.</p>
     </div>
 </section>
 
@@ -22,15 +23,17 @@
     <h1>What about alcohol?</h1>
     <h2 class="question">Great question.</h2>
     <div class="chart">
-        <p>This stacked bar chart shows the ratio of glasses of <span>water</span> and <span>alcohol</span> drunk per week. We've seperated the results based on how happy the students are. 10 is very happy. 1 is not so happy.</p>
+        <p>This stacked bar chart shows the ratio of glasses of <span>water</span> and <span>alcohol</span> drunk per
+            week. We've seperated the results based on how happy the students are. 10 is very happy. 1 is not so happy.
+        </p>
         <div class="image" style="background: url('/img/alcohol.svg') center center / cover" alt="">
             {% for i in (1..10) %}
-                <div class="bar">
-                    {% if forloop.index == 7 %}
-                    <span>No data</span>
-                    {% endif %}
-                    <div class="water">
-                        <span>
+            <div class="bar">
+                {% if forloop.index == 7 %}
+                <span>No data</span>
+                {% endif %}
+                <div class="water">
+                    <span>
                         {% if forloop.index == 1 %}49{% endif %}
                         {% if forloop.index == 2 %}42{% endif %}
                         {% if forloop.index == 3 %}33{% endif %}
@@ -41,20 +44,20 @@
                         {% if forloop.index == 9 %}7{% endif %}
                         {% if forloop.index == 10 %}280{% endif %}
                     </span>
-                    </div>
-                    <div class="alcohol">
-                        <span>
-                            {% if forloop.index == 1 %}11{% endif %}
-                            {% if forloop.index == 2 %}6{% endif %}
-                            {% if forloop.index == 3 %}7{% endif %}
-                            {% if forloop.index == 4 %}4{% endif %}
-                            {% if forloop.index == 5 %}2{% endif %}
-                            {% if forloop.index == 6 %}2{% endif %}
-                            {% if forloop.index == 8 %}5{% endif %}
-                            {% if forloop.index == 9 %}6{% endif %}
-                        </span>
-                    </div>
                 </div>
+                <div class="alcohol">
+                    <span>
+                        {% if forloop.index == 1 %}11{% endif %}
+                        {% if forloop.index == 2 %}6{% endif %}
+                        {% if forloop.index == 3 %}7{% endif %}
+                        {% if forloop.index == 4 %}4{% endif %}
+                        {% if forloop.index == 5 %}2{% endif %}
+                        {% if forloop.index == 6 %}2{% endif %}
+                        {% if forloop.index == 8 %}5{% endif %}
+                        {% if forloop.index == 9 %}6{% endif %}
+                    </span>
+                </div>
+            </div>
             {% endfor %}
             <span>Water</span>
             <span>Alcohol</span>
@@ -67,14 +70,59 @@
         <div class="overflower">
             <h1>JOBS</h1>
             <p>No, not steve</p>
+            <p>This piece of pie tells us how many students also work a job.</p>
         </div>
     </div>
     <div class="pie">
         <div class="chart">
-            <div></div>
-            <div></div>
+            <div class="job">
+                <span>71%</span>
+                <div class="nojob">
+                    <span>29%</span>
+                </div>
+            </div>
         </div>
     </div>
+</section>
+
+<section class="bijbaantwee">
+    <div class="left">
+        <h2>Doesn't have a job</h2>
+        <h3>Doesn't have job</h3>
+        <div class="card">
+            <p>Average life rating </p>
+            <span>7,4</span>
+        </div>
+    </div>
+    <div class="right">
+        <h2>Has a job</h2>
+        <h3>Has a job</h3>
+            <!-- {{ site.data.inputs.cijfer_leven[forloop.index0] }}
+            {{ site.data.inputs.uren_werk[forloop.index0] }} -->
+            <div class="scatter">
+                <img src="/img/work.svg" alt="">
+                <div class="rooster">
+                    {% for i in (1..66) %}
+                    {% assign left = site.data.inputs.uren_werk[forloop.index0] | times: 1.8875 %}
+                    <div class="dot" style="top: {% if site.data.inputs.cijfer_leven[forloop.index0] == 10 %}2.5{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 9 %}12.5{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 8 %}22.5{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 7 %}32.4{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 6 %}42.2{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 5 %}51.6{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 4 %}61.6{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 3 %}71.3{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 2 %}81.6{% endif %}{% if site.data.inputs.cijfer_leven[forloop.index0] == 1 %}90.7{% endif %}%; left: {{ left }}%">
+                        <div class="dot2">
+                        <span>
+                            Happiness: {{ site.data.inputs.cijfer_leven[forloop.index0] }} <br> Hours: {{ site.data.inputs.uren_werk[forloop.index0] }}
+                        </span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        <div class="card">
+            <p>Average life rating </p>
+            <span>7,4</span>
+        </div>
+    </div>
+</section>
+
+<section class="future">
+    
 </section>
 
 {% include footer.html %}
