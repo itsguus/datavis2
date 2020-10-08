@@ -132,6 +132,8 @@ section.bijbaan h1.active {font-size: 2rem; margin-top: 3rem; }
 main.future section.bijbaan .large {display: none;}
 main.directionwise section.bijbaan .large {display: none;}
 main.end section.bijbaan .large {display: none;}
+main.drugs section.bijbaan .large {display: none;}
+main.alcohol section.bijbaan .large {display: none;}
 
 section.bijbaan .pie {margin-top: 120rem; display: flex; justify-content: center; position: sticky; top: 13rem;}
 section.bijbaan .pie.active {position:relative;}
@@ -149,7 +151,7 @@ main.jobstwo section.bijbaan .pie .chart {border-radius: 0; width: 75rem; height
 main.jobstwo section.bijbaan .pie .chart .job {position: absolute; background: #2a9d8f;  width: 100%; height: 100%; top:20%; border-radius: 0; overflow: visible; transition-delay: 300ms; transition-property: top;}
 main.jobstwo section.bijbaan .pie .chart .nojob {position: absolute; background: #e76f51; width: 29%; height: 100%; top: 00%; left:0 ; opacity: 1; }
 main.jobstwo section.bijbaan .pie .chart .nojob::before {transform: rotate(0);}
-main.jobstwo section.bijbaantwee h2 {position: fixed; top: 35rem; pointer-events: none; text-align: center; margin: 0 auto; width: 35rem; font-size: 1rem; margin-left: -5rem; font-weight: 600; color: #2a9d8f; opacity: 0; transition: 300ms ease;}
+main.jobstwo section.bijbaantwee h2 {display: block; position: fixed; top: 35rem; pointer-events: none; text-align: center; margin: 0 auto; width: 35rem; font-size: 1rem; margin-left: -5rem; font-weight: 600; color: #2a9d8f; opacity: 0; transition: 300ms ease;}
 main.jobstwo section.bijbaan .pie.active .chart .job { height: 2rem; }
 
 
@@ -158,9 +160,14 @@ section.bijbaantwee {display: flex; height: 80rem;}
 section.bijbaantwee > div {top: 5rem; width: 71%; height: 100%; background: #2a9d8f;  margin-top: 25rem; display: flex; flex-direction: column; align-items: center; z-index: 2;}
 section.bijbaantwee > .left {background: #e76f51; width: 29%;}
 section.bijbaantwee h2 {position: fixed; top: 33rem; pointer-events: none; text-align: center; margin: 0 auto; width: 33rem; font-size: 1rem; margin-left: 4rem; font-weight: 600; color: #2a9d8f; opacity: 0; transition: 300ms ease;}
+
+main.intro section.bijbaantwee h2,
+main.alcohol section.bijbaantwee h2,
 main.future section.bijbaantwee h2,
 main.end section.bijbaantwee h2,
 main.directionwise section.bijbaantwee h2 {display: none;}
+
+
 section.bijbaantwee h2.active {opacity: 1;}
 section.bijbaantwee .left h2 {top: 19rem; margin-left: 19rem; color: #e76f51;}
 
