@@ -129,6 +129,7 @@ section.bijbaan p:last-of-type {text-align: center; font-size: 0.8rem; transitio
 section.bijbaan p.active {opacity: 1;}
 section.bijbaan h1.active {font-size: 2rem; margin-top: 3rem; }
 
+main.intro section.bijbaan .large {display: none;}
 main.future section.bijbaan .large {display: none;}
 main.directionwise section.bijbaan .large {display: none;}
 main.end section.bijbaan .large {display: none;}
